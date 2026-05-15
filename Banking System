@@ -1,0 +1,22 @@
+CREATE DATABASE bankdb;
+
+USE bankdb;
+
+CREATE TABLE accounts(
+    accno INT PRIMARY KEY,
+    cname VARCHAR(100),
+    mobile VARCHAR(15),
+    email VARCHAR(100),
+    password VARCHAR(50),
+    acc_type VARCHAR(30),
+    balance DOUBLE,
+    address VARCHAR(200)
+);
+
+CREATE TABLE transactions(
+    tid INT PRIMARY KEY AUTO_INCREMENT,
+    accno INT,
+    transaction_type VARCHAR(50),
+    amount DOUBLE,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
